@@ -21,7 +21,7 @@ public class MemoryGame extends javax.swing.JFrame {
     private JToggleButton[][] buttons;
     private Card lastSelectedCard = null;
     private JToggleButton lastSelectedButton = null;
-    private int points = 100;
+    private int points;
 
     /**
      * Inicio de nova partida
@@ -33,16 +33,21 @@ public class MemoryGame extends javax.swing.JFrame {
         try {
             //Crear un ArrayCardGenerator
             ArrayCardGenerator generator = new ArrayCardGenerator();
+            int rows = level + 2;
+            cards = generator.generateCards(rows, 4);
             //Resetear todos os togglebuttons
-
-            for (JToggleButton[] row:buttons) {
-                for (JToggleButton button:row) {
+            for (JToggleButton[] row : buttons) {
+                for (JToggleButton button : row) {
                     button.setSelected(false);
+                    button.setText("");
+                    button.setEnabled(true);
                 }
             }
-            
-            
             //Poñer as cartas selecionadas como null
+            lastSelectedCard = null;
+            lastSelectedButton = null;
+            points = 100;
+            showGameStatus();
             //Captura de excepcions
         } catch (GenerateCardsException e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Erro por nivel non permitido", JOptionPane.ERROR_MESSAGE);
@@ -76,16 +81,46 @@ public class MemoryGame extends javax.swing.JFrame {
      * mostra unha mensaxe de victoria cos puntos.
      */
     private void checkGameOver() {
+
+        for (Card[] row : cards) {
+            for (Card cards : row) {
+                if (!cards.isHit()) {
+                    return;
+                }
+            }
+        }
         JOptionPane.showMessageDialog(rootPane, "Noraboa! Acertaches todas as cartas, conseguindo " + points + " puntos!");
     }
 
-    /**
+    /**level
      * Destapa a carta que se atopa na fila e columan indicada
      *
      * @param filas
      * @param columnas
      */
-    private void uncover(int filas, int columnas) {
+    private void uncover(int row, int col) {
+        clearUnselectedButtons();
+        buttons[row][col].setText(cards[row][col].getText());
+        
+        if(lastSelectedCard == null) {
+            lastSelectedCard = cards[row][col];
+            lastSelectedButton = buttons[row][col];
+            lastSelectedButton.setEnabled(false);
+        } else {
+            if(lastSelectedCard.isEquals(cards[row][col])){
+                lastSelectedCard.setHit(true);
+                cards[row][col].setHit(true);
+                buttons[row][col].setEnabled(false);
+                checkGameOver();
+            } else {
+                lastSelectedButton.setSelected(false);
+                lastSelectedButton.setEnabled(true);
+                buttons[row][col].setSelected(false);
+                points--;
+                showGameStatus();
+            }
+            lastSelectedCard = null;
+        }
 
     }
 
@@ -94,9 +129,9 @@ public class MemoryGame extends javax.swing.JFrame {
      */
     public MemoryGame() {
         initComponents();
-        
+
         buttons = new JToggleButton[3][4];
-        
+
         buttons[0][0] = jToggleButton0_0;
         buttons[0][1] = jToggleButton0_1;
         buttons[0][2] = jToggleButton0_2;
@@ -109,8 +144,14 @@ public class MemoryGame extends javax.swing.JFrame {
         buttons[2][1] = jToggleButton2_1;
         buttons[2][2] = jToggleButton2_2;
         buttons[2][3] = jToggleButton2_3;
-        
-        
+
+    }
+    
+    private void confirExitGame(){
+        int response = JOptionPane.showConfirmDialog(this, "Seguro que queres sair?", "Sair", JOptionPane.YES_NO_OPTION);
+        if(response == JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
     }
 
     /**
@@ -295,19 +336,20 @@ public class MemoryGame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButtonNewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewGameActionPerformed
-        startNewGame(jComboBox1.);
+        
+        String selectedLevel = (String)jComboBox1.getSelectedItem();
+        
+        if("Sinxelo".equals(selectedLevel)) {
+        startNewGame(0);
+    } else if ("Medio".equals(selectedLevel)){
+        startNewGame(1);
+    } else if ("Dificil".equals(selectedLevel)){
+            
+    }
     }//GEN-LAST:event_jButtonNewGameActionPerformed
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        Component frame = null;
-
-        int result = JOptionPane.showConfirmDialog(frame, "Quieres salir de la aplicación?",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE);
-
-        if (result == JOptionPane.YES_OPTION) {
-            dispose();
-        }
+        confirExitGame();
     }//GEN-LAST:event_jButtonExitActionPerformed
 
     /**
