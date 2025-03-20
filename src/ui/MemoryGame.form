@@ -151,62 +151,62 @@
           <SubComponents>
             <Component class="javax.swing.JToggleButton" name="jToggleButton0_1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton13"/>
+                <Property name="text" type="java.lang.String" value="2"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton1_1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton13"/>
+                <Property name="text" type="java.lang.String" value="6"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton0_0">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton13"/>
+                <Property name="text" type="java.lang.String" value="1"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton1_0">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton13"/>
+                <Property name="text" type="java.lang.String" value="5"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton1_2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton13"/>
+                <Property name="text" type="java.lang.String" value="7"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton0_2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton13"/>
+                <Property name="text" type="java.lang.String" value="3"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton0_3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton13"/>
+                <Property name="text" type="java.lang.String" value="4"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton1_3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton13"/>
+                <Property name="text" type="java.lang.String" value="8"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton2_0">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton13"/>
+                <Property name="text" type="java.lang.String" value="9"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton2_1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton13"/>
+                <Property name="text" type="java.lang.String" value="10"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton2_2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton13"/>
+                <Property name="text" type="java.lang.String" value="11"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton2_3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton13"/>
+                <Property name="text" type="java.lang.String" value="12"/>
               </Properties>
             </Component>
           </SubComponents>

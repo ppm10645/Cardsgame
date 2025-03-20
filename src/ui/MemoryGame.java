@@ -192,29 +192,29 @@ public class MemoryGame extends javax.swing.JFrame {
         jLabelState.setText("Estado do jogo");
         jPanel2.add(jLabelState);
 
-        jToggleButton0_1.setText("jToggleButton13");
+        jToggleButton0_1.setText("2");
 
-        jToggleButton1_1.setText("jToggleButton13");
+        jToggleButton1_1.setText("6");
 
-        jToggleButton0_0.setText("jToggleButton13");
+        jToggleButton0_0.setText("1");
 
-        jToggleButton1_0.setText("jToggleButton13");
+        jToggleButton1_0.setText("5");
 
-        jToggleButton1_2.setText("jToggleButton13");
+        jToggleButton1_2.setText("7");
 
-        jToggleButton0_2.setText("jToggleButton13");
+        jToggleButton0_2.setText("3");
 
-        jToggleButton0_3.setText("jToggleButton13");
+        jToggleButton0_3.setText("4");
 
-        jToggleButton1_3.setText("jToggleButton13");
+        jToggleButton1_3.setText("8");
 
-        jToggleButton2_0.setText("jToggleButton13");
+        jToggleButton2_0.setText("9");
 
-        jToggleButton2_1.setText("jToggleButton13");
+        jToggleButton2_1.setText("10");
 
-        jToggleButton2_2.setText("jToggleButton13");
+        jToggleButton2_2.setText("11");
 
-        jToggleButton2_3.setText("jToggleButton13");
+        jToggleButton2_3.setText("12");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
